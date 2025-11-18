@@ -283,3 +283,4 @@
 /Users/koreanbadboy/Documents/Beo/Programmering skolan/RiderProjects/EFCore/EF-Core/obj/Debug/net8.0/EF-Core.pdb
 /Users/koreanbadboy/Documents/Beo/Programmering skolan/RiderProjects/EFCore/EF-Core/obj/Debug/net8.0/EF-Core.genruntimeconfig.cache
 /Users/koreanbadboy/Documents/Beo/Programmering skolan/RiderProjects/EFCore/EF-Core/obj/Debug/net8.0/ref/EF-Core.dll
+/Users/koreanbadboy/Documents/Beo/Programmering skolan/RiderProjects/EFCore/EF-Core/obj/Debug/net8.0/EF-Core.sourcelink.json
