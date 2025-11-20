@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/koreanbadboy/RiderProjects/EFCore/EF-Core.csproj": {}
+    "/Users/koreanbadboy/Documents/Beo/Programmering skolan/RiderProjects/EFCore/EF-Core.csproj": {}
   },
   "projects": {
-    "/Users/koreanbadboy/RiderProjects/EFCore/EF-Core.csproj": {
+    "/Users/koreanbadboy/Documents/Beo/Programmering skolan/RiderProjects/EFCore/EF-Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/koreanbadboy/RiderProjects/EFCore/EF-Core.csproj",
+        "projectUniqueName": "/Users/koreanbadboy/Documents/Beo/Programmering skolan/RiderProjects/EFCore/EF-Core.csproj",
         "projectName": "EF-Core",
-        "projectPath": "/Users/koreanbadboy/RiderProjects/EFCore/EF-Core.csproj",
+        "projectPath": "/Users/koreanbadboy/Documents/Beo/Programmering skolan/RiderProjects/EFCore/EF-Core.csproj",
         "packagesPath": "/Users/koreanbadboy/.nuget/packages/",
-        "outputPath": "/Users/koreanbadboy/RiderProjects/EFCore/obj/",
+        "outputPath": "/Users/koreanbadboy/Documents/Beo/Programmering skolan/RiderProjects/EFCore/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/koreanbadboy/.nuget/NuGet/NuGet.Config"
@@ -20,6 +20,7 @@
           "net8.0"
         ],
         "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -38,7 +39,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -69,15 +70,15 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.20, 8.0.20]"
+              "version": "[8.0.22, 8.0.22]"
             },
             {
               "name": "Microsoft.NETCore.App.Host.osx-arm64",
-              "version": "[8.0.20, 8.0.20]"
+              "version": "[8.0.22, 8.0.22]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.20, 8.0.20]"
+              "version": "[8.0.22, 8.0.22]"
             }
           ],
           "frameworkReferences": {
@@ -85,7 +86,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/Users/koreanbadboy/.dotnet/sdk/9.0.305/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

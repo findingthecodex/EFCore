@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "chRlZdkuqxk=",
+  "dgSpecHash": "IV+OM/QGbFE=",
   "success": true,
-  "projectFilePath": "/Users/koreanbadboy/RiderProjects/EFCore/EF-Core.csproj",
+  "projectFilePath": "/Users/koreanbadboy/Documents/Beo/Programmering skolan/RiderProjects/EFCore/EF-Core.csproj",
   "expectedPackageFiles": [
     "/Users/koreanbadboy/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/koreanbadboy/.nuget/packages/microsoft.bcl.asyncinterfaces/7.0.0/microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",
@@ -53,9 +53,9 @@
     "/Users/koreanbadboy/.nuget/packages/system.text.encodings.web/9.0.11/system.text.encodings.web.9.0.11.nupkg.sha512",
     "/Users/koreanbadboy/.nuget/packages/system.text.json/9.0.11/system.text.json.9.0.11.nupkg.sha512",
     "/Users/koreanbadboy/.nuget/packages/system.threading.channels/7.0.0/system.threading.channels.7.0.0.nupkg.sha512",
-    "/Users/koreanbadboy/.nuget/packages/microsoft.netcore.app.ref/8.0.20/microsoft.netcore.app.ref.8.0.20.nupkg.sha512",
-    "/Users/koreanbadboy/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.20/microsoft.aspnetcore.app.ref.8.0.20.nupkg.sha512",
-    "/Users/koreanbadboy/.nuget/packages/microsoft.netcore.app.host.osx-arm64/8.0.20/microsoft.netcore.app.host.osx-arm64.8.0.20.nupkg.sha512"
+    "/Users/koreanbadboy/.nuget/packages/microsoft.netcore.app.ref/8.0.22/microsoft.netcore.app.ref.8.0.22.nupkg.sha512",
+    "/Users/koreanbadboy/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.22/microsoft.aspnetcore.app.ref.8.0.22.nupkg.sha512",
+    "/Users/koreanbadboy/.nuget/packages/microsoft.netcore.app.host.osx-arm64/8.0.22/microsoft.netcore.app.host.osx-arm64.8.0.22.nupkg.sha512"
   ],
   "logs": []
 }
