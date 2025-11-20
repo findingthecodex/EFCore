@@ -2,6 +2,7 @@
 using Databas2;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Databas2.Migrations
 {
     [DbContext(typeof(ShopContext))]
-    partial class ShopContextModelSnapshot : ModelSnapshot
+    [Migration("20251120120413_AddedProduct")]
+    partial class AddedProduct
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.11");
@@ -49,7 +52,6 @@ namespace Databas2.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Description")
-                        .HasMaxLength(250)
                         .HasColumnType("TEXT");
 
                     b.Property<decimal>("Price")
@@ -64,6 +66,11 @@ namespace Databas2.Migrations
 
                     b.HasIndex("CategoryId");
 
+                    b.HasIndex("Description")
+                        .IsUnique();
+
+                    b.HasIndex("Price");
+
                     b.ToTable("Products");
                 });
 
@@ -72,7 +79,7 @@ namespace Databas2.Migrations
                     b.HasOne("Databas2.Models.Category", "Category")
                         .WithMany("Products")
                         .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Category");

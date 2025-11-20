@@ -9,4 +9,6 @@ public class Author
     public string Name  { get; set; }
     [Required, MaxLength(30)]
     public string Country  { get; set; }
+
+    public List<Book> Books { get; set; } = new();
 }
