@@ -18,6 +18,6 @@ public class Category
     public string? CategoryDescription { get; set; }
     
     // Many to till (varje kategori har flera produkter)
-    public ICollection<Product> Products { get; set; } = new List<Product>();
+    public List<Product> Products { get; set; } = new();
 }
 
