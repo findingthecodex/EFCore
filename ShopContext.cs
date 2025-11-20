@@ -42,13 +42,16 @@ namespace Databas2
                     .HasForeignKey(c=>c.CategoryId)
                     .OnDelete(DeleteBehavior.Cascade);
             });
+            
+            // Produkt
             modelBuilder.Entity<Product>(e =>
             {
                 e.HasKey(x => x.ProductId);
                 e.Property(x => x.ProductName)
                     .IsRequired().HasMaxLength(100);
-                e.HasIndex(x => x.Price);
-                e.HasIndex(x => x.Description).IsUnique();
+                e.Property(x => x.Price).IsRequired();
+                e.Property(x => x.Description).HasMaxLength(250);
+                //e.HasIndex(x => x.ProductName).IsUnique();
             });
         }
     }

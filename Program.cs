@@ -25,6 +25,17 @@ using (var db = new ShopContext())
         await db.SaveChangesAsync();
         Console.WriteLine("Seeded db!");
     }
+    
+    // Product
+    if (!await db.Products.AnyAsync())
+    {
+        db.Products.AddRange(
+            new Product { ProductName = "GPU", Description = "RTX 5080", Price = 8999.99m, CategoryId = 1 },
+            new Product { ProductName = "RAM", Description = "32GB Kingston", Price = 1299.99m, CategoryId = 1 }
+        );
+        await db.SaveChangesAsync();
+        Console.WriteLine("Seeded db!");
+    }
 }
 
 // CLI för CRUD; CREATE; READ; UPDATE; DE:ETE

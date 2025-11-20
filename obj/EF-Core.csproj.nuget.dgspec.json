@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Giang\\RiderProjects\\EFCore\\EF-Core.csproj": {}
+    "/Users/koreanbadboy/RiderProjects/EFCore/EF-Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Giang\\RiderProjects\\EFCore\\EF-Core.csproj": {
+    "/Users/koreanbadboy/RiderProjects/EFCore/EF-Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Giang\\RiderProjects\\EFCore\\EF-Core.csproj",
+        "projectUniqueName": "/Users/koreanbadboy/RiderProjects/EFCore/EF-Core.csproj",
         "projectName": "EF-Core",
-        "projectPath": "C:\\Users\\Giang\\RiderProjects\\EFCore\\EF-Core.csproj",
-        "packagesPath": "C:\\Users\\Giang\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Giang\\RiderProjects\\EFCore\\obj\\",
+        "projectPath": "/Users/koreanbadboy/RiderProjects/EFCore/EF-Core.csproj",
+        "packagesPath": "/Users/koreanbadboy/.nuget/packages/",
+        "outputPath": "/Users/koreanbadboy/RiderProjects/EFCore/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Giang\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/koreanbadboy/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -37,7 +37,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -65,12 +66,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.20, 8.0.20]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.osx-arm64",
+              "version": "[8.0.20, 8.0.20]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.20, 8.0.20]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.413/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/Users/koreanbadboy/.dotnet/sdk/9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
