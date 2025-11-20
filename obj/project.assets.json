@@ -3186,25 +3186,24 @@
     ]
   },
   "packageFolders": {
-    "/Users/koreanbadboy/.nuget/packages/": {}
+    "C:\\Users\\Giang\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/koreanbadboy/Documents/Beo/Programmering skolan/RiderProjects/EFCore/EF-Core/EF-Core.csproj",
+      "projectUniqueName": "C:\\Users\\Giang\\RiderProjects\\EFCore\\EF-Core.csproj",
       "projectName": "EF-Core",
-      "projectPath": "/Users/koreanbadboy/Documents/Beo/Programmering skolan/RiderProjects/EFCore/EF-Core/EF-Core.csproj",
-      "packagesPath": "/Users/koreanbadboy/.nuget/packages/",
-      "outputPath": "/Users/koreanbadboy/Documents/Beo/Programmering skolan/RiderProjects/EFCore/EF-Core/obj/",
+      "projectPath": "C:\\Users\\Giang\\RiderProjects\\EFCore\\EF-Core.csproj",
+      "packagesPath": "C:\\Users\\Giang\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Giang\\RiderProjects\\EFCore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/koreanbadboy/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Giang\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "/usr/local/share/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -3255,7 +3254,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.414/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.413/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

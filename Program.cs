@@ -30,7 +30,7 @@ using (var db = new ShopContext())
 // CLI för CRUD; CREATE; READ; UPDATE; DE:ETE
 while (true)
 {
-    Console.WriteLine("\nCommands : list | add | (ap) AddProduct | (pbc) productsbycategory | delete <id> | edit <id> | exit");
+    Console.WriteLine("\nCommands : list | (pbc) See products in categories | (ap) Add Product | (add) add a Category | (deletec + <ID>) Delete category | (deletep + <ID>) Delete product | (editc + <id>) Edit category | (editp + <ID>) Edit product | exit");
     Console.Write("> ");
     var line = Console.ReadLine()?.Trim() ?? string.Empty;
     // hoppa över tomma rader
@@ -54,29 +54,45 @@ while (true)
         case "list":
             await ListAsync();
             break; // Lista vår categories
-        case "add" :
+        case "add":
             await AddAsync();
             break; // Lägg till en category
-        case "ap" :
+        case "ap":
             await AddProductAsync();
             break; // Lägg till product
-        case "edit":
+
+        // Edit category
+        case "editc":
+        {
             // Kräver id efter kommandot "edit"
             if (parts.Length < 2 || !int.TryParse(parts[1], out var id))
             {
-                Console.WriteLine("Usage: Edit <id>");
+                Console.WriteLine("Usage: editc <id>");
                 break;
             }
-            await EditAsync(id);
+            await EditCategoryAsync(id);
             break; // redigera en category
-        case "delete":
+        }
+        // Edit product
+        case "editp":
+        {
+            if (parts.Length < 2 || !int.TryParse(parts[1], out var id))
+            {
+                Console.WriteLine("Usage: editp <id>");
+                break;
+            }
+            await EditProductAsync(id);
+            break;
+        }
+        
+        case "deletep":
             // Radera en category
             if (parts.Length < 2 || !int.TryParse(parts[1], out var idD))
             {
                 Console.WriteLine("Usage: Delete <id>");
                 break;
             }
-            await DeleteAsync(idD);
+            await DeleteCategoryAsync(idD);
             break;
         // Kategorilista
         case "pbc":
@@ -90,7 +106,8 @@ while (true)
 
 return;
 
-static async Task DeleteAsync(int id)
+// Delete category
+static async Task DeleteCategoryAsync(int id)
 {
     using var  db = new ShopContext();
     var category = await db.Categories.FirstOrDefaultAsync(c => c.CategoryId == id); // hittar Id
@@ -112,7 +129,7 @@ static async Task DeleteAsync(int id)
     
 }
 
-static async Task EditAsync(int id)
+static async Task EditCategoryAsync(int id)
 {
     using var db = new ShopContext();
     
@@ -143,15 +160,56 @@ static async Task EditAsync(int id)
     try
     {
         await db.SaveChangesAsync();
-        Console.WriteLine("Edited.");
+        Console.WriteLine("Category edited.");
     }
     catch (DbUpdateException exeption)
     {
         Console.WriteLine(exeption.Message);
     }
 }
+
+static async Task EditProductAsync(int id)
+{
+    using var db = new ShopContext();
+    var product = await db.Products.FirstOrDefaultAsync(x => x.ProductId == id);
+    if (product == null)
+    {
+        Console.WriteLine("Product not found.");
+        return;
+    }
+    // Namn
+    Console.WriteLine($"{product.ProductName}");
+    var name = Console.ReadLine()?.Trim() ?? string.Empty;
+    if (!string.IsNullOrEmpty(name))
+        product.ProductName = name;
+
+    // Beskrivning
+    Console.WriteLine($"Description {product.Description}:");
+    var description = Console.ReadLine()?.Trim() ?? string.Empty;
+    if (!string.IsNullOrEmpty(description))
+        product.Description = description;
     
+    // Pris
+    Console.WriteLine($"Price ({product.Price}):");
+    var priceInput = Console.ReadLine()?.Trim() ?? string.Empty;
+
+    if (!string.IsNullOrEmpty(priceInput) && decimal.TryParse(priceInput, out var newPrice))
+    {
+        product.Price = newPrice;
+    }
     
+    try
+    {
+        await db.SaveChangesAsync();
+        Console.WriteLine("Product edited.");
+    }
+    catch (DbUpdateException exeption)
+    {
+        Console.WriteLine(exeption.Message);
+    }
+}
+
+
 // READ: Lista alla kategorier
 static async Task ListAsync()
 {
@@ -290,6 +348,6 @@ static async Task ProductsByCategoryAsync()
     Console.WriteLine("Id | Name | Price | Description");
     foreach (var product in products)
     {
-        Console.WriteLine($"{product.ProductId} | {product.ProductName} | {product.Description} | {product.Price}");
+        Console.WriteLine($"{product.ProductId} | {product.ProductName} | {product.Description} | {product.Price} SEK");
     }
 }
