@@ -5,14 +5,13 @@ namespace Databas2.Models;
 public class Book
 {
     public int BookId { get; set; }
-    [Required]
-    public string? Title { get; set; }
-    [Required]
-    public int Year { get; set; }
-    [Required]
+    [Required, MaxLength(100)]
+    public string BookTitle { get; set; }
+    [Required, MaxLength(10)]
+    public int? ReleaseYear { get; set; }
     
     // Foreignkey
-    public int AuthorId { get; set; }
+    public int? AuthorId { get; set; }
     
     //Navigering
     public Author? Author { get; set; }

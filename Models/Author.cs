@@ -6,9 +6,9 @@ public class Author
 {
     public int AuthorId { get; set; }
     [Required, MaxLength(30)]
-    public string Name  { get; set; }
+    public string AuthorName  { get; set; }
     [Required, MaxLength(30)]
-    public string Country  { get; set; }
+    public string AuthorCountry  { get; set; }
 
     public List<Book> Books { get; set; } = new();
 }
