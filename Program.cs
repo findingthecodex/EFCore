@@ -90,7 +90,7 @@ while (true)
     {
         while (true)
         {
-            Console.WriteLine("\nCategories: List (1) | Category+ (2) | edit <id> | delete <id> | Back (..)");
+            Console.WriteLine("\nCategories: List (1) | Category+ (add+) | edit <id> | delete <id> | Back (..)");
             Console.WriteLine(">");
             var line = Console.ReadLine()?.Trim() ?? string.Empty;
             // Hoppa över tomma rader
@@ -115,7 +115,7 @@ while (true)
                     // Lista våra categories
                     await ListAsync();
                     break;
-                case "2":
+                case "add+":
                     // Lägg till en category
                     await AddAsync();
                     break;
@@ -151,7 +151,7 @@ while (true)
     {
         while (true)
         {
-            Console.WriteLine("\nProducts: List (1) | Add (2) | edit <id> | delete <id> | Back (..)");
+            Console.WriteLine("\nProducts: List (1) | Add (add+) | edit <id> | delete <id> | Back (..)");
             Console.WriteLine(">");
             var line = Console.ReadLine()?.Trim() ?? string.Empty;
             // Hoppa över tomma rader
@@ -187,7 +187,7 @@ while (true)
                     // Lista våra produkter
                     await ListProductsAsync();
                     break;
-                case "2":
+                case "add+":
                     // Lägg till en product
                     await AddProductAsync();
                     break;
