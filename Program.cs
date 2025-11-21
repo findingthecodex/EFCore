@@ -15,12 +15,13 @@ using (var db = new ShopContext())
     if (!await db.Categories.AnyAsync())
     {
         db.Categories.AddRange(
-            new Category { CategoryName = "Books", CategoryDescription = "All books we have" },
-            new Category { CategoryName = "Movies", CategoryDescription = "All movies we have" }
-        );
+            new Category { CategoryName = "Book", CategoryDescription = "All books we have" },
+            new Category { CategoryName = "Movies", CategoryDescription = "All movies we have" },
+            new Category { CategoryName =  "PC-parts", CategoryDescription = "All PC-parts we have"});
+        
         db.Products.AddRange(
-            new Product { ProductName = "GPU", Description = "RTX 5080", Price = 8999.99m, CategoryId = 1 },
-            new Product { ProductName = "RAM", Description = "32GB Kingston", Price = 1299.99m, CategoryId = 1 }
+            new Product { ProductName = "GPU", Description = "RTX 5080", Price = 8999.99m, CategoryId = 3 },
+            new Product { ProductName = "RAM", Description = "32GB Kingston", Price = 1299.99m, CategoryId = 3 }
             );
         await db.SaveChangesAsync();
         Console.WriteLine("Seeded db!");
@@ -67,6 +68,7 @@ while (true)
     Console.WriteLine("1 - Categories");
     Console.WriteLine("2 - Products");
     Console.WriteLine("3 - Library");
+    Console.WriteLine();
     Console.WriteLine("exit - Shut down");
     Console.WriteLine(">");
 
@@ -88,7 +90,7 @@ while (true)
     {
         while (true)
         {
-            Console.WriteLine("\nCategories: List | add | delete <id> | edit <id> | exit");
+            Console.WriteLine("\nCategories: List (1) | Category+ (2) | edit <id> | delete <id> | Back (..)");
             Console.WriteLine(">");
             var line = Console.ReadLine()?.Trim() ?? string.Empty;
             // Hoppa över tomma rader
@@ -97,7 +99,7 @@ while (true)
                 continue;
             }
 
-            if (line.Equals("exit", StringComparison.OrdinalIgnoreCase))
+            if (line.Equals("..", StringComparison.OrdinalIgnoreCase))
             {
                 break; // Avsluta programmet, hoppa ur loopen
             }
@@ -109,11 +111,11 @@ while (true)
             // Enkel switch för kommandotolkning
             switch (cmd)
             {
-                case "list":
+                case "1":
                     // Lista våra categories
                     await ListAsync();
                     break;
-                case "add":
+                case "2":
                     // Lägg till en category
                     await AddAsync();
                     break;
@@ -149,7 +151,7 @@ while (true)
     {
         while (true)
         {
-            Console.WriteLine("\nProducts: List | add | delete <id> | edit <id> | exit");
+            Console.WriteLine("\nProducts: List (1) | Add (2) | edit <id> | delete <id> | Back (..)");
             Console.WriteLine(">");
             var line = Console.ReadLine()?.Trim() ?? string.Empty;
             // Hoppa över tomma rader
@@ -158,7 +160,7 @@ while (true)
                 continue;
             }
 
-            if (line.Equals("exit", StringComparison.OrdinalIgnoreCase))
+            if (line.Equals("..", StringComparison.OrdinalIgnoreCase))
             {
                 break; // Avsluta programmet, hoppa ur loopen
             }
@@ -181,11 +183,11 @@ while (true)
 
                     await ProductsByCategoryAsync(idCategory);
                     break;
-                case "list":
+                case "1":
                     // Lista våra produkter
                     await ListProductsAsync();
                     break;
-                case "add":
+                case "2":
                     // Lägg till en product
                     await AddProductAsync();
                     break;
@@ -221,7 +223,7 @@ while (true)
     {
         while (true)
         {
-            Console.WriteLine("\nLibrary: Auths | Books | Auth+ <id> | Book+ <id> | booksbyauthor | exit");
+            Console.WriteLine("\nLibrary: Authors (1) | Books (2) | Auth+ <id> (add) | Book+ <id> (add) | booksbyauthor | Back (..)");
             Console.WriteLine(">");
             var line = Console.ReadLine()?.Trim() ?? string.Empty;
             // Hoppa över tomma rader
@@ -230,7 +232,7 @@ while (true)
                 continue;
             }
 
-            if (line.Equals("exit", StringComparison.OrdinalIgnoreCase))
+            if (line.Equals("..", StringComparison.OrdinalIgnoreCase))
             {
                 break; // Avsluta programmet, hoppa ur loopen
             }
@@ -242,10 +244,10 @@ while (true)
             // Enkel switch för kommando
             switch (cmd)
             {
-                case "auths":
+                case "1":
                     await Auths();
                     break;
-                case "books":
+                case "2":
                     await Books();
                     break;
                 case "auth+":
